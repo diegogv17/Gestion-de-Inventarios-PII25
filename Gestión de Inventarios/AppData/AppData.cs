@@ -26,11 +26,11 @@ namespace GestionInventarios.Data
                 Categorias.Add(new Categoria { Id = 5, Nombre = "Ropa" });
 
                 // Productos de ejemplo
-                Productos.Add(new Producto { Id = 1, Nombre = "Coca-Cola", CategoriaId = 1, Stock = 50 });
-                Productos.Add(new Producto { Id = 2, Nombre = "Arroz", CategoriaId = 2, Stock = 100 });
-                Productos.Add(new Producto { Id = 3, Nombre = "Celular", CategoriaId = 3, Stock = 10 });
-                Productos.Add(new Producto { Id = 4, Nombre = "Detergente", CategoriaId = 4, Stock = 30 });
-                Productos.Add(new Producto { Id = 5, Nombre = "Camiseta", CategoriaId = 5, Stock = 20 });
+                Productos.Add(new Producto { Id = 1, Nombre = "Coca-Cola", CategoriaId = 1,Precio =  1, Stock = 50 });
+                Productos.Add(new Producto { Id = 2, Nombre = "Arroz", CategoriaId = 2, Precio = 2, Stock = 100 });
+                Productos.Add(new Producto { Id = 3, Nombre = "Celular", CategoriaId = 3, Precio = 1500, Stock = 10 });
+                Productos.Add(new Producto { Id = 4, Nombre = "Detergente", CategoriaId = 4, Precio = 3, Stock = 30 });
+                Productos.Add(new Producto { Id = 5, Nombre = "Camiseta", CategoriaId = 5, Precio = 5, Stock = 20 });
 
                 // Movimientos iniciales
                 Movimientos.Add(new MovimientoInventario

@@ -32,13 +32,14 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btnEditar = new Button();
             btneliminar = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(34, 34);
+            dataGridView1.Location = new Point(24, 101);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(479, 370);
             dataGridView1.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(569, 60);
+            btnEditar.Location = new Point(559, 127);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(188, 101);
             btnEditar.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // btneliminar
             // 
-            btneliminar.Location = new Point(570, 189);
+            btneliminar.Location = new Point(560, 256);
             btneliminar.Name = "btneliminar";
             btneliminar.Size = new Size(195, 96);
             btneliminar.TabIndex = 2;
@@ -64,11 +65,22 @@
             btneliminar.UseVisualStyleBackColor = true;
             btneliminar.Click += btneliminar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
+            label1.Location = new Point(149, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(515, 65);
+            label1.TabIndex = 3;
+            label1.Text = "Gestión de categorías";
+            // 
             // CategoriasForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 495);
+            Controls.Add(label1);
             Controls.Add(btneliminar);
             Controls.Add(btnEditar);
             Controls.Add(dataGridView1);
@@ -77,6 +89,7 @@
             Load += CategoriasForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -85,5 +98,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Button btnEditar;
         private Button btneliminar;
+        private Label label1;
     }
 }

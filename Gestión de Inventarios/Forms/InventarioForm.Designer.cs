@@ -36,6 +36,11 @@
             btnAgregarProducto = new Button();
             btnEditarProducto = new Button();
             btnEliminarProducto = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPrecio).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudCantidad).BeginInit();
@@ -44,24 +49,25 @@
             // dataGridViewProductos
             // 
             dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProductos.Location = new Point(46, 284);
+            dataGridViewProductos.Location = new Point(108, 324);
             dataGridViewProductos.Name = "dataGridViewProductos";
-            dataGridViewProductos.Size = new Size(750, 272);
+            dataGridViewProductos.Size = new Size(621, 319);
             dataGridViewProductos.TabIndex = 0;
             dataGridViewProductos.CellContentClick += dataGridViewProductos_CellContentClick;
             // 
             // txtNombreProducto
             // 
-            txtNombreProducto.Location = new Point(51, 69);
+            txtNombreProducto.Location = new Point(48, 103);
             txtNombreProducto.Name = "txtNombreProducto";
             txtNombreProducto.Size = new Size(750, 23);
             txtNombreProducto.TabIndex = 1;
+            txtNombreProducto.Tag = "";
             txtNombreProducto.TextChanged += txtNombreProducto_TextChanged;
             // 
             // cmbCategorias
             // 
             cmbCategorias.FormattingEnabled = true;
-            cmbCategorias.Location = new Point(51, 108);
+            cmbCategorias.Location = new Point(48, 156);
             cmbCategorias.Name = "cmbCategorias";
             cmbCategorias.Size = new Size(387, 23);
             cmbCategorias.TabIndex = 2;
@@ -69,7 +75,7 @@
             // 
             // nudPrecio
             // 
-            nudPrecio.Location = new Point(469, 107);
+            nudPrecio.Location = new Point(466, 155);
             nudPrecio.Name = "nudPrecio";
             nudPrecio.Size = new Size(332, 23);
             nudPrecio.TabIndex = 3;
@@ -77,7 +83,7 @@
             // 
             // nudCantidad
             // 
-            nudCantidad.Location = new Point(51, 151);
+            nudCantidad.Location = new Point(48, 209);
             nudCantidad.Name = "nudCantidad";
             nudCantidad.Size = new Size(750, 23);
             nudCantidad.TabIndex = 4;
@@ -85,7 +91,7 @@
             // 
             // btnAgregarProducto
             // 
-            btnAgregarProducto.Location = new Point(70, 206);
+            btnAgregarProducto.Location = new Point(124, 259);
             btnAgregarProducto.Name = "btnAgregarProducto";
             btnAgregarProducto.Size = new Size(144, 46);
             btnAgregarProducto.TabIndex = 5;
@@ -95,7 +101,7 @@
             // 
             // btnEditarProducto
             // 
-            btnEditarProducto.Location = new Point(238, 207);
+            btnEditarProducto.Location = new Point(292, 260);
             btnEditarProducto.Name = "btnEditarProducto";
             btnEditarProducto.Size = new Size(143, 44);
             btnEditarProducto.TabIndex = 6;
@@ -105,7 +111,7 @@
             // 
             // btnEliminarProducto
             // 
-            btnEliminarProducto.Location = new Point(425, 207);
+            btnEliminarProducto.Location = new Point(479, 260);
             btnEliminarProducto.Name = "btnEliminarProducto";
             btnEliminarProducto.Size = new Size(168, 45);
             btnEliminarProducto.TabIndex = 7;
@@ -113,11 +119,63 @@
             btnEliminarProducto.UseVisualStyleBackColor = true;
             btnEliminarProducto.Click += btnEliminarProducto_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(48, 85);
+            label1.Name = "label1";
+            label1.Size = new Size(122, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Nombre de producto:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(48, 138);
+            label2.Name = "label2";
+            label2.Size = new Size(61, 15);
+            label2.TabIndex = 9;
+            label2.Text = "Categoría:";
+            label2.Click += label2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(466, 138);
+            label3.Name = "label3";
+            label3.Size = new Size(87, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Precio unitario:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(48, 191);
+            label4.Name = "label4";
+            label4.Size = new Size(162, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Cantidad inicial en existencia:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 36F, FontStyle.Bold);
+            label5.Location = new Point(166, 9);
+            label5.Name = "label5";
+            label5.Size = new Size(511, 65);
+            label5.TabIndex = 12;
+            label5.Text = "Gestión de productos";
+            // 
             // InventarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(901, 600);
+            ClientSize = new Size(901, 690);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnEliminarProducto);
             Controls.Add(btnEditarProducto);
             Controls.Add(btnAgregarProducto);
@@ -146,5 +204,10 @@
         private Button btnAgregarProducto;
         private Button btnEditarProducto;
         private Button btnEliminarProducto;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label label5;
     }
 }

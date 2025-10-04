@@ -24,6 +24,7 @@ namespace Gestión_de_Inventarios.Forms
             dataGridViewProductos.Columns.Add("Id", "Id");
             dataGridViewProductos.Columns.Add("Nombre", "Nombre");
             dataGridViewProductos.Columns.Add("Categoria", "Categoría");
+            dataGridViewProductos.Columns.Add("Precio", "Precio Unitario");
             dataGridViewProductos.Columns.Add("Stock", "Stock");
             dataGridViewProductos.Columns.Add("Disponible", "Disponible (Sí/No)");
         }
@@ -41,6 +42,7 @@ namespace Gestión_de_Inventarios.Forms
                     producto.Id,
                     producto.Nombre,
                     nombreCategoria,
+                    producto.Precio.ToString("C2"),
                     producto.Stock,
                     producto.Stock > 0 ? "Sí" : "No" // Ejemplo: se puede mostrar si tiene stock
                 );
@@ -105,12 +107,21 @@ namespace Gestión_de_Inventarios.Forms
 
             int nuevoId = AppData.Productos.Count > 0 ? AppData.Productos.Max(p => p.Id) + 1 : 1;
 
+            var categoriaIdObj = cmbCategorias.SelectedValue;
+            if (categoriaIdObj == null)
+            {
+                MessageBox.Show("Seleccione una categoría válida.");
+                return;
+            }
+            int categoriaId = (int)categoriaIdObj;
+
             var producto = new Producto
             {
                 Id = nuevoId,
                 Nombre = txtNombreProducto.Text,
-                CategoriaId = (int)cmbCategorias.SelectedValue,
-                Stock = (int)nudCantidad.Value
+                CategoriaId = categoriaId,
+                Stock = (int)nudCantidad.Value,
+                Precio = nudPrecio.Value
             };
 
             AppData.Productos.Add(producto);
@@ -133,7 +144,7 @@ namespace Gestión_de_Inventarios.Forms
             nudPrecio.Value = 0;
             nudCantidad.Value = 0;
         }
-        
+
 
         private void btnEditarProducto_Click(object sender, EventArgs e)
         {
@@ -196,6 +207,11 @@ namespace Gestión_de_Inventarios.Forms
         }
 
         private void txtNombreProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
