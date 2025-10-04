@@ -13,7 +13,7 @@ namespace GestionInventarios.Data
         public static List<Producto> Productos { get; set; } = new List<Producto>();
         public static List<MovimientoInventario> Movimientos { get; set; } = new List<MovimientoInventario>();
 
-        // Inicializar datos de prueba
+        //Datos de prueba
         public static void InicializarDatosPrueba()
         {
             if (Categorias.Count == 0)
@@ -25,14 +25,14 @@ namespace GestionInventarios.Data
                 Categorias.Add(new Categoria { Id = 4, Nombre = "Limpieza" });
                 Categorias.Add(new Categoria { Id = 5, Nombre = "Ropa" });
 
-                // Productos de ejemplo
+                // Productos
                 Productos.Add(new Producto { Id = 1, Nombre = "Coca-Cola", CategoriaId = 1,Precio =  1, Stock = 50 });
                 Productos.Add(new Producto { Id = 2, Nombre = "Arroz", CategoriaId = 2, Precio = 2, Stock = 100 });
                 Productos.Add(new Producto { Id = 3, Nombre = "Celular", CategoriaId = 3, Precio = 1500, Stock = 10 });
                 Productos.Add(new Producto { Id = 4, Nombre = "Detergente", CategoriaId = 4, Precio = 3, Stock = 30 });
                 Productos.Add(new Producto { Id = 5, Nombre = "Camiseta", CategoriaId = 5, Precio = 5, Stock = 20 });
 
-                // Movimientos iniciales
+                // Movimientos 
                 Movimientos.Add(new MovimientoInventario
                 {
                     ProductoId = 1,

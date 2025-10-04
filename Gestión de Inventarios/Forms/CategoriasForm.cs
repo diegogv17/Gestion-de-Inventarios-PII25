@@ -46,7 +46,7 @@ namespace Gestión_de_Inventarios.Forms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -106,6 +106,35 @@ namespace Gestión_de_Inventarios.Forms
             AppData.InicializarDatosPrueba(); // Luego inicializa datos de prueba
             CargarCategorias();             // Finalmente carga las filas
 
+        }
+
+        private void btncrear_Click(object sender, EventArgs e)
+        {
+            string nombreNueva = Microsoft.VisualBasic.Interaction.InputBox(
+        "Ingrese el nombre de la nueva categoría:", "Crear Categoría", "");
+
+            if (!string.IsNullOrWhiteSpace(nombreNueva))
+            {
+                // Generar un nuevo Id (tomando el máximo actual + 1)
+                int nuevoId = AppData.Categorias.Count > 0
+                    ? AppData.Categorias.Max(c => c.Id) + 1
+                    : 1;
+
+                var nuevaCategoria = new Categoria
+                {
+                    Id = nuevoId,
+                    Nombre = nombreNueva
+                };
+
+                AppData.Categorias.Add(nuevaCategoria);
+                CargarCategorias();
+
+                MessageBox.Show("Categoría creada con éxito.");
+            }
+            else
+            {
+                MessageBox.Show("El nombre no puede estar vacío.");
+            }
         }
     }
 }

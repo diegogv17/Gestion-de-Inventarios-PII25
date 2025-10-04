@@ -33,6 +33,7 @@
             btnEditar = new Button();
             btneliminar = new Button();
             label1 = new Label();
+            btncrear = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(559, 127);
+            btnEditar.Location = new Point(566, 222);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(188, 101);
             btnEditar.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btneliminar
             // 
-            btneliminar.Location = new Point(560, 256);
+            btneliminar.Location = new Point(559, 366);
             btneliminar.Name = "btneliminar";
             btneliminar.Size = new Size(195, 96);
             btneliminar.TabIndex = 2;
@@ -75,11 +76,22 @@
             label1.TabIndex = 3;
             label1.Text = "Gestión de categorías";
             // 
+            // btncrear
+            // 
+            btncrear.Location = new Point(568, 110);
+            btncrear.Name = "btncrear";
+            btncrear.Size = new Size(185, 93);
+            btncrear.TabIndex = 4;
+            btncrear.Text = "Crear";
+            btncrear.UseVisualStyleBackColor = true;
+            btncrear.Click += btncrear_Click;
+            // 
             // CategoriasForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 495);
+            Controls.Add(btncrear);
             Controls.Add(label1);
             Controls.Add(btneliminar);
             Controls.Add(btnEditar);
@@ -99,5 +111,6 @@
         private Button btnEditar;
         private Button btneliminar;
         private Label label1;
+        private Button btncrear;
     }
 }
